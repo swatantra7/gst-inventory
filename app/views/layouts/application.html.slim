@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title
+      | GstInventory
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    header.header
+      .top-bar
+        .container
+          .col-md-1.header-logo
+            .col-md-2
+              = image_tag 'logo.png', alt: 'logo'
+          - if user_signed_in?
+            .pull-right
+              ul.nav.navbar-nav
+                li
+                  = link_to image_tag('logout_logo.png'), destroy_user_session_path, method: :delete,
+                    data: { confirm: 'Are you sure you want to logout?' }, class: 'icon btn'
+          - else
+            .pull-right
+              ul.nav.navbar-nav
+                li
+                  = link_to image_tag('login_logo.png'), new_user_session_path, class: 'icon btn'
+      - if user_signed_in?
+          = render partial: 'layouts/navigation'
+    .page-content
+      .container
+        - if notice
+          p.alert.alert-success
+            = notice
+        - if alert
+          p.alert.alert-danger
+            = alert
+        = yield
+  .footer.space-20
+    .container.no-padding
+      .col-md-6.no-padding.col-xs-7.col-sm-8
+        small.copyright Copyright © AMTECH #{Time.now.year}, All Rights Reserved
+      .pull-right
+        span GstInventory

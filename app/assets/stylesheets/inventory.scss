@@ -1,0 +1,41 @@
+$elan-blue: #bb8fce ;
+$catskill-white: #eff3f7;
+$white: #ffffff;
+$regent-gray: #808d9e;
+$surf-crest: #d6e3d3;
+.header {
+	.top-bar {
+		background-color: $elan-blue;
+		.header-logo {
+      padding: 5px 0;
+    }
+  }
+  .main-nav {
+    background-color:  #f2f3f4;
+    border-bottom: 2px solid $catskill-white;
+    .nav-item {
+      border-left: 1px solid $catskill-white;
+      font-size: 10px;
+    }
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: $elan-blue;
+  .copyright, span {
+    color: $white;
+  }
+}
+
+.page-content {
+  padding-top: 62px;
+  .container {
+    border: 1px solid $surf-crest;
+    height: auto;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+}
