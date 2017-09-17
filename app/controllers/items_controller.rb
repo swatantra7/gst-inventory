@@ -59,7 +59,7 @@ class ItemsController < ApplicationController
       :picture,
       :vendor_url,
       :category,
-      :location
+      :location,
     )
   end
 

@@ -21,11 +21,9 @@ class Item < ApplicationRecord
   end
 
   def write_order_attributes!(quantity)
-    puts "1111111111111#{quantity}"
     io = orders.new
     io.quantity = quantity
     io.amount = calculate_order_amount(quantity)
-    puts "111111111111111111111#{io.inspect}"
     io.save
   end
 

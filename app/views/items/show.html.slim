@@ -28,7 +28,7 @@ h4.text-center = "Item Detail of Order"
         label.col-md-5.control-label Cost:
         label.col-md-4
           = f.text_field :value,  hide_label: true, disabled: true, class: 'form-control'
-          = f.hidden_field :value
+          = f.hidden_field :value, class: 'hidden_value'
       .space-20
         .row
           .pull-right

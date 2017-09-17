@@ -31,8 +31,10 @@ $(document).ready(function(){
   function updateTotalPrice(total_price){
     if(isNaN(total_price)) {
       $('#item_value').val(0);
+      $('.hidden_value').val(0);
     } else {
       $('#item_value').val(total_price);
+      $('.hidden_value').val(total_price);
     }
   }
 
