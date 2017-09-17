@@ -10,12 +10,20 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery-2.0.3.min
 //= require jquery_ujs
+//= require chosen.jquery
 //= require bootstrap-sprockets
+//= require bootstrap-datepicker
 //= require_tree .
 
 $(document).ready(function(){
+
+   $('.chosen-select').chosen({
+    no_results_text: 'Oops, nothing found!',
+    width: '100%',
+    search_contains: true
+  });
 
   $('#item_quantity').keyup(function(){
     calculateTotalPrice();
@@ -37,6 +45,31 @@ $(document).ready(function(){
       $('.hidden_value').val(total_price);
     }
   }
+
+  $('.datepicker').datepicker({
+    format: 'yyyy/mm/dd',
+    startDate: '1987/01/01',
+    forceParse: false,
+    autoclose: true,
+    todayHighlight: true
+  });
+
+  $('.future-disabled-datepicker').datepicker({
+    format: 'yyyy/mm/dd',
+    startDate: '1987/01/01',
+    endDate: '+0d',
+    forceParse: false,
+    autoclose: true,
+    todayHighlight: true
+  });
+
+  $('.past-disabled-datepicker').datepicker({
+    format: 'yyyy/mm/dd',
+    startDate: '+0d',
+    forceParse: false,
+    autoclose: true,
+    todayHighlight: true
+  });
 
 });
 

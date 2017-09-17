@@ -1,0 +1,13 @@
+.form-group
+  = search_form_for @search, html: {class: 'form-horizontal'} do |f|
+    .form-group
+      .col-md-3
+        = label_tag 'Date', nil, class: 'control-label'
+        = f.text_field :created_at_gteq, class: 'datepicker'
+      label.col-md-1 to
+      .col-md-3
+        = f.text_field :created_at_lteq, class: 'datepicker'
+    .form-group
+      = f.submit 'Submit', class: 'btn btn-success btn-sm'
+      |&nbsp;
+      = link_to 'Clear', items_path, class: 'btn btn-success btn-sm'

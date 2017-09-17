@@ -1,7 +1,12 @@
 class OrdersController < ApplicationController
 
-	def show
-		@order = Order.find(params[:id])
-	end
+  def index
+    @search = Order.ransack(params[:q])
+    @order = @search.result
+  end
+
+  def show
+    @order = Order.find(params[:id])
+  end
 
 end

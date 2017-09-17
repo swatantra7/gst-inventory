@@ -1,0 +1,33 @@
+.space-20
+h4.text-center = t('.Placed Orders')
+.space-20
+  = render partial: 'search'
+.row
+  .col-md-12
+    .table-wrapper
+      .space-20
+        .table-responsive
+          table.table.table-bordered.table-striped#bootstrap-table
+            thead
+              tr
+                th data-sortable='true' = t('.reference_id')
+                th data-sortable='true' = t('.item_name')
+                th data-sortable='true' = t('.model_name')
+                th data-sortable='true' = t('.quantity')
+                th data-sortable='true' = t('.unit_value')
+                th data-sortable='true' = t('.total_value')
+                th data-sortable='true' = t('.vendor')
+                th data-sortable='true' = t('.location')
+                th data-sortable= 'true' = t('.ordered_on')
+            tbody
+              - @order.each do |order|
+                tr
+                  td = order.reference_id
+                  td = link_to order.name, order_path(order)
+                  td = order.product_model_number
+                  td = order.quantity
+                  td = order.unit_value
+                  td = order.amount
+                  td = order.vendor_url
+                  td = order.location
+                  td = order.created_at

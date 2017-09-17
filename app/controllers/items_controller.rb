@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   before_action :find_item, only: [:edit, :update, :show, :order_item]
 
   def index
-    @item = Item.all
+    @search = Item.all.ransack(params[:q])
+    @item = @search.result
   end
 
   def new
@@ -59,7 +60,7 @@ class ItemsController < ApplicationController
       :picture,
       :vendor_url,
       :category,
-      :location,
+      :location
     )
   end
 

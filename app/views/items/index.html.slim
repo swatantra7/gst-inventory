@@ -4,7 +4,9 @@ h4.text-center = t('.items_in_inventory')
   .col-md-12
     .table-wrapper
       .row
-        .col-md-12
+        .col-md-7
+          = render partial: 'shared/search'
+        .col-md-5
           .pull-right
             = link_to t('.add_new_item'), new_item_path, class: 'btn btn-success'
       .space-20

@@ -1,10 +1,16 @@
 class Order < ApplicationRecord
 
+  include ReferenceId
+
+  referenced_with prefix: :ON
+
   belongs_to :item
 
   after_save :write_item_attribute!
 
   validate :order_quantity
+
+  delegate :name, :product_model_number, :unit_value,:vendor_url, :location, to: :item, allow_nil: true
 
   private
 

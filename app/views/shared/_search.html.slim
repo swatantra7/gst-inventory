@@ -1,0 +1,14 @@
+.row
+  .col-md-12
+    = search_form_for @search, html: {class: 'form-horizontal'} do |f|
+      .form-group
+        = label_tag 'Item Name', nil, class: 'col-md-2 control-label'
+        .col-md-4
+          = f.select :name_in,
+            options_from_collection_for_select(Item.all, :name,
+            proc { |obj| obj.name },
+            selected: params[:q] ? params[:q][:name_in] : nil),
+            { include_blank: 'Select' }, { class: 'chosen-select form-control' }
+      = f.submit 'Submit', class: 'btn btn-success btn-sm'
+      |&nbsp;
+      = link_to 'Clear', items_path, class: 'btn btn-success btn-sm'
