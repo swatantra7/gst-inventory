@@ -27,19 +27,21 @@ en:
 
   general:
     edit: 'Edit'
+    action: 'Action'
   buttons:
     save: 'Save'
     cancel: 'Cancel'
   items:
     index:
       reference_id: &reference_id 'Reference Id'
-      item_name: 'Item Name'
-      model_name: 'Model Name'
+      item_name: &item_name 'Item Name'
+      model_name: &model_name 'Model Name'
       quantity: &quantity 'Quantity'
       unit_value: &unit_value 'Unit value'
-      total_value: 'Total Value'
+      total_value: &total_value 'Total Value'
       vendor: &vendor 'Vendor'
       location: &location 'Location'
+      add_new_item: 'Add New Item'
     form:
       name_of_the_item: 'Name of the item'
       product_model_number: 'Product Model Name'
@@ -51,7 +53,27 @@ en:
     show:
       reference_id: *reference_id
       name: 'Name'
-      model_name: 'Model Name'
+      model_name: *model_name
       unit_value: *unit_value
       quantity: *quantity
       are_you_sure_you_want_to_place_the_order: 'Are You sure want to place the order'
+  orders:
+    index:
+      reference_id: *reference_id
+      item_name: *item_name
+      model_name: *model_name
+      quantity: *quantity
+      unit_value: *unit_value
+      total_value: *total_value
+      vendor: *vendor
+      location: *location
+      ordered_on: 'Ordered On'
+      placed_orders: 'Placed Orders'
+    show:
+      reference_id: *reference_id
+      item_name: *item_name
+      model_name: *model_name
+      quantity: *quantity
+      unit_value: *unit_value
+      order_date: 'Order Date'
+      quantity: *quantity

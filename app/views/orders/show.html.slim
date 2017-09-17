@@ -6,13 +6,13 @@ h4.text-center = "Item Detail of Order"
       label.col-md-5.control-label = t('.reference_id')
       label.col-md-4 = @order.item.reference_id
     .row
-      label.col-md-5.control-label = t('.name')
+      label.col-md-5.control-label = t('.item_name')
       label.col-md-4 = @order.item.name
     .row
       label.col-md-5.control-label = t('.model_name')
       label.col-md-4 = @order.item.product_model_number
     .row
-      label.col-md-5.control-label Order Date:
+      label.col-md-5.control-label = t('.order_date')
       label.col-md-4
         = @order.try(:updated_at).try(:to_s, :dd_month_yyyy_at_hh_mm)
     .row
@@ -27,3 +27,5 @@ h4.text-center = "Item Detail of Order"
     .space-20
       .row
         = link_to "Print this Page", '#', onclick: "javascript:print(); return false", class: 'btn btn-success'
+        |&nbsp;
+        = link_to 'Back', orders_path, class: 'btn btn-warning'
