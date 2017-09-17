@@ -24,3 +24,34 @@ en:
   layouts:
     application:
       login: 'LOGIN'
+
+  general:
+    edit: 'Edit'
+  buttons:
+    save: 'Save'
+    cancel: 'Cancel'
+  items:
+    index:
+      reference_id: &reference_id 'Reference Id'
+      item_name: 'Item Name'
+      model_name: 'Model Name'
+      quantity: &quantity 'Quantity'
+      unit_value: &unit_value 'Unit value'
+      total_value: 'Total Value'
+      vendor: &vendor 'Vendor'
+      location: &location 'Location'
+    form:
+      name_of_the_item: 'Name of the item'
+      product_model_number: 'Product Model Name'
+      quantity: *quantity
+      unit_value: *unit_value
+      vendor: *vendor
+      location: *location
+      are_you_sure_you_want_to_add_item: 'Are you sure want to add this item'
+    show:
+      reference_id: *reference_id
+      name: 'Name'
+      model_name: 'Model Name'
+      unit_value: *unit_value
+      quantity: *quantity
+      are_you_sure_you_want_to_place_the_order: 'Are You sure want to place the order'

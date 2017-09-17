@@ -1,0 +1,37 @@
+.space-20
+h4.text-center = t('.items_in_inventory')
+.row
+  .col-md-12
+    .table-wrapper
+      .row
+        .col-md-12
+          .pull-right
+            = link_to t('.add_new_item'), new_item_path, class: 'btn btn-success'
+      .space-20
+        .table-responsive
+          table.table.table-bordered.table-striped#bootstrap-table
+            thead
+              tr
+                th data-sortable='true' = t('.reference_id')
+                th data-sortable='true' = t('.item_name')
+                th data-sortable='true' = t('.model_name')
+                th data-sortable='true' = t('.quantity')
+                th data-sortable='true' = t('.unit_value')
+                th data-sortable='true' = t('.total_value')
+                th data-sortable='true' = t('.vendor')
+                th data-sortable='true' = t('.location')
+                th = t('general.action')
+            tbody
+              - @item.each do |item|
+                tr
+                  td = item.reference_id
+                  td = link_to item.name, item_path(item)
+                  td = item.product_model_number
+                  td = item.quantity
+                  td = item.unit_value
+                  td = item.value
+                  td = item.vendor_url
+                  td = item.location
+                  td
+                    = link_to '', edit_item_path(item),
+                      class: "glyphicon glyphicon-pencil"

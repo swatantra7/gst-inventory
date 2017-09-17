@@ -13,5 +13,28 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+
+  $('#item_quantity').keyup(function(){
+    calculateTotalPrice();
+  });
+
+  function calculateTotalPrice(){
+    item_quantity = parseFloat($('#item_quantity').val())
+    item_value = parseFloat($('#unit_value').val())
+    total_price = item_quantity*item_value
+    updateTotalPrice(total_price)
+  }
+
+  function updateTotalPrice(total_price){
+    if(isNaN(total_price)) {
+      $('#item_value').val(0);
+    } else {
+      $('#item_value').val(total_price);
+    }
+  }
+
+});
+

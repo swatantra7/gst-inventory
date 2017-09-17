@@ -1,0 +1,17 @@
+.col-md-10.col-md-offset-1
+  = bootstrap_form_for @item, layout: :horizontal,
+     label_col: 'col-md-3', control_col: 'col-md-7' do |f|
+    = f.text_field :name, help: t('.name_of_the_item')
+    = f.text_field :product_model_number, help: t('.product_model_number')
+    = f.text_field :quantity, help: t('.quantity')
+    = f.text_field :unit_value, help: t('.unit_value')
+    = f.text_field :vendor_url, help: t('.vendor')
+    = f.text_field :location, help: t('.location')
+
+    = f.form_group
+      .pull-right
+        = link_to t('buttons.cancel'), items_path,
+            class: 'btn btn-danger btn-sm'
+        |&nbsp;
+        = f.submit t('buttons.save'), data: { confirm: t('.are_you_sure_you_want_to_add_item')}, class: 'btn btn-success btn-sm'
+  .space-20

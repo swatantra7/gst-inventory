@@ -3,6 +3,7 @@ $catskill-white: #eff3f7;
 $white: #ffffff;
 $regent-gray: #808d9e;
 $surf-crest: #d6e3d3;
+$light-green: #657589;
 .header {
 	.top-bar {
 		background-color: $elan-blue;
@@ -21,7 +22,6 @@ $surf-crest: #d6e3d3;
 }
 
 .footer {
-  position: fixed;
   bottom: 0;
   width: 100%;
   background-color: $elan-blue;
@@ -38,4 +38,20 @@ $surf-crest: #d6e3d3;
     padding: 0;
     margin-bottom: 40px;
   }
+
+  .table-wrapper  {
+    padding: 50px;
+    background-color: $white;
+    th, td {
+      text-align: center;
+      color: $light-green;
+    }
+    a i {
+      margin-right: 8px;
+    }
+  }
+}
+
+.space-20{
+  padding: 20px 0;
 }

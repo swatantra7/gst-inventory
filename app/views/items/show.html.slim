@@ -1,0 +1,38 @@
+space-20
+h4.text-center = "Item Detail of Order"
+.space-20
+  = bootstrap_form_for @item, url: order_item_item_path, validate: true do |f|
+    .col-md-9.col-md-offset-1.col-xs-8.col-xs-offset-1
+      .row
+        label.col-md-5.control-label = t('.reference_id')
+        label.col-md-4 = f.object.reference_id
+      .row
+        label.col-md-5.control-label = t('.name')
+        label.col-md-4 = f.object.name
+      .row
+        label.col-md-5.control-label = t('.model_name')
+        label.col-md-4 = f.object.product_model_number
+      .row
+        label.col-md-5.control-label Updated On:
+        label.col-md-4
+          = f.object.try(:updated_at).try(:to_s, :dd_month_yyyy_at_hh_mm)
+          = f.hidden_field :unit_value, id: :unit_value
+      .row
+        label.col-md-5.control-label = t('.unit_value')
+        label.col-md-4 = f.object.unit_value
+      .row
+        label.col-md-5.control-label = t('quantity')
+        label.col-md-4
+          = f.text_field :quantity, hide_label: true, class: 'form-control'
+      .row
+        label.col-md-5.control-label Cost:
+        label.col-md-4
+          = f.text_field :value,  hide_label: true, disabled: true, class: 'form-control'
+          = f.hidden_field :value
+      .space-20
+        .row
+          .pull-right
+            = link_to 'cancel', items_path,
+                class: 'btn btn-danger btn-sm'
+            |&nbsp;
+            = f.submit 'Order', data: { confirm: t('.are_you_sure_you_want_to_place_the_order') }, class: 'btn btn-success btn-sm'
