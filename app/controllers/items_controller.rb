@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
     @order = @item.orders.build(build_attributes)
     if @order.save
       flash[:notice] = 'order placed sucessfully'
-      redirect_to items_path
+      redirect_to order_path(@order)
     else
       flash[:alert] = 'Order quantity should not be zero or less than item quantity'
       redirect_to item_path

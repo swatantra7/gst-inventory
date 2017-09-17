@@ -1,0 +1,29 @@
+space-20
+h4.text-center = "Item Detail of Order"
+.space-20
+  .col-md-9.col-md-offset-1.col-xs-8.col-xs-offset-1
+    .row
+      label.col-md-5.control-label = t('.reference_id')
+      label.col-md-4 = @order.item.reference_id
+    .row
+      label.col-md-5.control-label = t('.name')
+      label.col-md-4 = @order.item.name
+    .row
+      label.col-md-5.control-label = t('.model_name')
+      label.col-md-4 = @order.item.product_model_number
+    .row
+      label.col-md-5.control-label Order Date:
+      label.col-md-4
+        = @order.try(:updated_at).try(:to_s, :dd_month_yyyy_at_hh_mm)
+    .row
+      label.col-md-5.control-label = t('.unit_value')
+      label.col-md-4 = @order.item.unit_value
+    .row
+      label.col-md-5.control-label = t('quantity')
+      label.col-md-4 = @order.quantity
+    .row
+      label.col-md-5.control-label Cost:
+      label.col-md-4 = @order.amount
+    .space-20
+      .row
+        = link_to "Print this Page", '#', onclick: "javascript:print(); return false", class: 'btn btn-success'
