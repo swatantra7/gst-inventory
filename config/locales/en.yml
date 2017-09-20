@@ -25,6 +25,10 @@ en:
     application:
       login: 'LOGIN'
 
+  activities:
+    index:
+      notifications: 'Notifications'
+
   general:
     edit: 'Edit'
     action: 'Action'

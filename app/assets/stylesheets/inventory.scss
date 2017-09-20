@@ -4,6 +4,7 @@ $white: #ffffff;
 $regent-gray: #808d9e;
 $surf-crest: #d6e3d3;
 $light-green: #657589;
+$alto: #dddddd;
 .header {
 	.top-bar {
 		background-color: $elan-blue;
@@ -23,10 +24,20 @@ $light-green: #657589;
 
 .footer {
   bottom: 0;
+  position: fixed;
   width: 100%;
   background-color: $elan-blue;
   .copyright, span {
     color: $white;
+  }
+}
+
+.dashboard-wrapper {
+  padding: 50px;
+  .dashboard .row {
+    border: 1px solid $alto;
+    padding: 4px 0;
+    margin: 0 13px;
   }
 }
 

@@ -2,6 +2,8 @@ class Order < ApplicationRecord
 
   include ReferenceId
 
+  include PublicActivity::Common
+
   referenced_with prefix: :ON
 
   belongs_to :item

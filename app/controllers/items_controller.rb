@@ -14,10 +14,10 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      @item.create_activity :create, owner: current_user
       flash[:notice] = 'item created sucessfully'
       redirect_to items_path
     else
-      puts "#{@item.errors.inspect}"
       flash[:alert] = 'item not created'
       redirect_to new_item_path
     end
@@ -37,6 +37,7 @@ class ItemsController < ApplicationController
     @order = @item.orders.build(build_attributes)
     if @order.save
       flash[:notice] = 'order placed sucessfully'
+      @order.create_activity :order_item, owner: current_user
       redirect_to order_path(@order)
     else
       flash[:alert] = 'Order quantity should not be zero or less than item quantity'

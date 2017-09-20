@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
 
   include ReferenceId
+  include PublicActivity::Common
 
   referenced_with prefix: :IN
 

@@ -13,6 +13,7 @@
 //= require jquery-2.0.3.min
 //= require jquery_ujs
 //= require chosen.jquery
+//= require bootstrap-table
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
 //= require_tree .
@@ -47,28 +48,19 @@ $(document).ready(function(){
   }
 
   $('.datepicker').datepicker({
-    format: 'yyyy/mm/dd',
-    startDate: '1987/01/01',
+    format: 'dd/mm/yyyy',
+    startDate: '01/01/2000',
     forceParse: false,
     autoclose: true,
     todayHighlight: true
   });
 
-  $('.future-disabled-datepicker').datepicker({
-    format: 'yyyy/mm/dd',
-    startDate: '1987/01/01',
-    endDate: '+0d',
-    forceParse: false,
-    autoclose: true,
-    todayHighlight: true
-  });
-
-  $('.past-disabled-datepicker').datepicker({
-    format: 'yyyy/mm/dd',
-    startDate: '+0d',
-    forceParse: false,
-    autoclose: true,
-    todayHighlight: true
+  $('#bootstrap-table').bootstrapTable({
+    pagination: true,
+    pageList: [10, 20, 50, 100, 200],
+    onPageChange: function (number, size) {
+      $('.payslip_attribute_value').editable();
+    }
   });
 
 });

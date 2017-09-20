@@ -1,6 +1,6 @@
 SimpleNavigation::Configuration.run do |navigation|  
   navigation.items do |primary|
-    primary.item :dashboard, :Dashboard, '#'
+    primary.item :dashboard, :Dashboard, activities_index_path
     primary.item :Manage, 'Manage', '#' do |secondary|
       secondary.item :items, :Item, items_path
     end
