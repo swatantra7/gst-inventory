@@ -30,6 +30,8 @@ gem 'jquery-turbolinks', '2.1.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+gem 'public_activity'
+
 gem 'bootstrap_form'
 
 gem 'simple-navigation-bootstrap'
