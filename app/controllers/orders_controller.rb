@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 
   def index
-    @search = Order.ransack(params[:q])
+    @search = current_user.orders.ransack(params[:q])
     @order = @search.result
   end
 

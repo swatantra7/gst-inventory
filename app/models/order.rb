@@ -7,6 +7,7 @@ class Order < ApplicationRecord
   referenced_with prefix: :ON
 
   belongs_to :item
+  belongs_to :user
 
   after_save :write_item_attribute!
 

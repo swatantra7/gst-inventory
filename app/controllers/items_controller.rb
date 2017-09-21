@@ -3,16 +3,16 @@ class ItemsController < ApplicationController
   before_action :find_item, only: [:edit, :update, :show, :order_item]
 
   def index
-    @search = Item.all.ransack(params[:q])
+    @search = current_user.items.ransack(params[:q])
     @item = @search.result
   end
 
   def new
-    @item = Item.new
+    @item = current_user.items.new
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = current_user.items.new(item_params)
     if @item.save
       @item.create_activity :create, owner: current_user
       flash[:notice] = 'item created sucessfully'
@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
 
   def order_item
     @order = @item.orders.build(build_attributes)
+    @order.user_id = current_user
     if @order.save
       flash[:notice] = 'order placed sucessfully'
       @order.create_activity :order_item, owner: current_user
@@ -66,7 +67,7 @@ class ItemsController < ApplicationController
   end
 
   def find_item
-    @item = Item.find(params[:id])
+    @item = current_user.items.find(params[:id])
   end
 
   def build_attributes

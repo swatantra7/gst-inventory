@@ -16,6 +16,7 @@ class Item < ApplicationRecord
   before_save :write_value!
   
   has_many :orders
+  belongs_to :user
 
   def write_value!
     self.value = quantity*unit_value
