@@ -22,6 +22,9 @@ h4.text-center = "Item Detail of Order"
       label.col-md-5.control-label = t('quantity')
       label.col-md-4 = @order.quantity
     .row
+      label.col-md-5.control-label = t('.gst_percentage')
+      label.col-md-4 = @order.gst_percentage
+    .row
       label.col-md-5.control-label Cost:
       label.col-md-4 = @order.amount
     .space-20

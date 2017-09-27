@@ -46,6 +46,7 @@ en:
       vendor: &vendor 'Vendor'
       location: &location 'Location'
       add_new_item: 'Add New Item'
+      gst_percetage: &gst_percetage 'Gst'
     form:
       name_of_the_item: 'Name of the item'
       product_model_number: 'Product Model Name'
@@ -53,6 +54,7 @@ en:
       unit_value: *unit_value
       vendor: *vendor
       location: *location
+      gst_percetage: *gst_percetage
       are_you_sure_you_want_to_add_item: 'Are you sure want to add this item'
     show:
       reference_id: *reference_id
@@ -61,6 +63,7 @@ en:
       unit_value: *unit_value
       quantity: *quantity
       are_you_sure_you_want_to_place_the_order: 'Are You sure want to place the order'
+      gst_percetage: *gst_percetage
   orders:
     index:
       reference_id: *reference_id
@@ -73,6 +76,7 @@ en:
       location: *location
       ordered_on: 'Ordered On'
       placed_orders: 'Placed Orders'
+      gst_percetage: *gst_percetage
     show:
       reference_id: *reference_id
       item_name: *item_name
@@ -81,3 +85,4 @@ en:
       unit_value: *unit_value
       order_date: 'Order Date'
       quantity: *quantity
+      gst_percetage: *gst_percetage

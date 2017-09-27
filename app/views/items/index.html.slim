@@ -19,6 +19,7 @@ h4.text-center = t('.items_in_inventory')
                 th data-sortable='true' = t('.model_name')
                 th data-sortable='true' = t('.quantity')
                 th data-sortable='true' = t('.unit_value')
+                th data-sortable='true' = t('.gst_percentage')
                 th data-sortable='true' = t('.total_value')
                 th data-sortable='true' = t('.vendor')
                 th data-sortable='true' = t('.location')
@@ -31,6 +32,7 @@ h4.text-center = t('.items_in_inventory')
                   td = item.product_model_number
                   td = item.quantity
                   td = item.unit_value
+                  td = item.gst_percentage
                   td = item.value
                   td = item.vendor_url
                   td = item.location

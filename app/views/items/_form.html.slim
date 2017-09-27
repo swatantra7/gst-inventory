@@ -5,9 +5,9 @@
     = f.text_field :product_model_number, help: t('.product_model_number')
     = f.text_field :quantity, help: t('.quantity')
     = f.text_field :unit_value, help: t('.unit_value')
+    = f.text_field :gst_percentage, help: t('.gst_percentage')
     = f.text_field :vendor_url, help: t('.vendor')
     = f.text_field :location, help: t('.location')
-
     = f.form_group
       .pull-right
         = link_to t('buttons.cancel'), items_path,

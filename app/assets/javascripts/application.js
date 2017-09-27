@@ -30,10 +30,15 @@ $(document).ready(function(){
     calculateTotalPrice();
   });
 
+  $('#item_gst_percentage').keyup(function(){
+    calculateTotalPrice();
+  });
+
   function calculateTotalPrice(){
     item_quantity = parseFloat($('#item_quantity').val())
     item_value = parseFloat($('#unit_value').val())
-    total_price = item_quantity*item_value
+    gst_percentage = parseFloat($('#item_gst_percentage').val())
+    total_price = totalPriceWithGst(item_quantity, item_value, gst_percentage)
     updateTotalPrice(total_price)
   }
 
@@ -45,6 +50,11 @@ $(document).ready(function(){
       $('#item_value').val(total_price);
       $('.hidden_value').val(total_price);
     }
+  }
+
+  function totalPriceWithGst(item_quantity, item_value, gst_percentage) {
+    total_price = item_quantity*item_value + item_quantity*(item_value*gst_percentage/100)
+    return total_price;
   }
 
   $('.datepicker').datepicker({

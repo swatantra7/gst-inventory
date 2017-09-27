@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
 
   def order_item
     @order = @item.orders.build(build_attributes)
-    @order.user_id = current_user
+    @order.user_id = current_user.id
     if @order.save
       flash[:notice] = 'order placed sucessfully'
       @order.create_activity :order_item, owner: current_user
@@ -62,7 +62,8 @@ class ItemsController < ApplicationController
       :picture,
       :vendor_url,
       :category,
-      :location
+      :location,
+      :gst_percentage
     )
   end
 
@@ -71,7 +72,7 @@ class ItemsController < ApplicationController
   end
 
   def build_attributes
-    { quantity: params[:item][:quantity], amount: params[:item][:value] }
+    { quantity: params[:item][:quantity], amount: params[:item][:value], gst_percentage: params[:item] [:gst_percentage] }
   end
 
 end

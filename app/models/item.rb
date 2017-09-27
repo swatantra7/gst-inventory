@@ -18,31 +18,22 @@ class Item < ApplicationRecord
   has_many :orders
   belongs_to :user
 
+  private
+
   def write_value!
-    self.value = quantity*unit_value
+    self.value = calculate_item_value
   end
 
-  def write_order_attributes!(quantity)
-    io = orders.new
-    io.quantity = quantity
-    io.amount = calculate_order_amount(quantity)
-    io.save
+  def calculate_item_value
+    calculate_item_price +  calculate_gst_price
   end
 
-  def calculate_order_amount(quantity)
-    quantity*unit_value
+  def calculate_item_price
+    unit_value * quantity
   end
 
-  def update_item_detail
-    update_attributes(quantity: remaining_quantity, value: updated_value)
-  end
-
-  def remaining_quantity
-    quantity_change[0] - quantity_change[1]
-  end
-
-  def updated_value
-    remaining_quantity*unit_value
+  def calculate_gst_price
+    (unit_value*gst_percentage/100) * quantity
   end
 
 end

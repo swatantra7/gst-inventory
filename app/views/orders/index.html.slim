@@ -15,6 +15,7 @@ h4.text-center = t('.placed_orders')
                 th data-sortable='true' = t('.model_name')
                 th data-sortable='true' = t('.quantity')
                 th data-sortable='true' = t('.unit_value')
+                th data-sortable='true' = t('.gst_percentage')
                 th data-sortable='true' = t('.total_value')
                 th data-sortable='true' = t('.vendor')
                 th data-sortable='true' = t('.location')
@@ -27,6 +28,7 @@ h4.text-center = t('.placed_orders')
                   td = order.product_model_number
                   td = order.quantity
                   td = order.unit_value
+                  td = order.gst_percentage
                   td = order.amount
                   td = order.vendor_url
                   td = order.location
