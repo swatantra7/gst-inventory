@@ -5,7 +5,7 @@
         = label_tag 'Item Name', nil, class: 'col-md-2 control-label'
         .col-md-4
           = f.select :name_in,
-            options_from_collection_for_select(Item.all, :name,
+            options_from_collection_for_select(current_user.items, :name,
             proc { |obj| obj.name },
             selected: params[:q] ? params[:q][:name_in] : nil),
             { include_blank: 'Select' }, { class: 'chosen-select form-control' }
