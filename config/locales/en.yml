@@ -86,3 +86,6 @@ en:
       order_date: 'Order Date'
       quantity: *quantity
       gst_percetage: *gst_percetage
+      gst_no: 'GST NO 20ACDPA0117'
+      full_address: 'Suman Agency Ram Janki Mandir Road Simdega, Mob No: 9835721967'
+      address: 'Address:'

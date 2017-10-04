@@ -7,6 +7,13 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'receipt',
+        template: 'orders/show.html.slim'
+      end
+    end
   end
 
 end

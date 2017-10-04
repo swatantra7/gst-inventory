@@ -35,6 +35,8 @@ gem 'public_activity'
 gem 'bootstrap_form'
 
 gem 'simple-navigation-bootstrap'
+gem 'wicked_pdf', '1.1.0'
+gem 'wkhtmltopdf-binary', '0.12.3.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
