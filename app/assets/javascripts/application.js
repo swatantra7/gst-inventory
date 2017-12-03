@@ -14,13 +14,14 @@
 //= require jquery_ujs
 //= require chosen.jquery
 //= require bootstrap-table
+//= require jquery_ujs
 //= require bootstrap-sprockets
+//= require cocoon
 //= require bootstrap-datepicker
-//= require_tree .
 
 $(document).ready(function(){
 
-   $('.chosen-select').chosen({
+  $('.chosen-select').chosen({
     no_results_text: 'Oops, nothing found!',
     width: '100%',
     search_contains: true
@@ -72,6 +73,5 @@ $(document).ready(function(){
       $('.payslip_attribute_value').editable();
     }
   });
-
 });
 

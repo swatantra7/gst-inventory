@@ -4,7 +4,10 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :Manage, 'Manage', '#' do |secondary|
       secondary.item :items, :Item, items_path
     end
-    primary.item :orders, 'Order', orders_path
+    primary.item :orders, 'Order', '#' do |secondary|
+      secondary.item :orders, :OrderList, orders_path
+      secondary.item :orders, :OrderBulkItem, new_order_path
+    end
     primary.dom_class = 'nav navbar-nav'
     primary.dropdown = true
     primary.split = false

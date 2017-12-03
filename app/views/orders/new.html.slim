@@ -1,0 +1,16 @@
+= javascript_include_tag 'order.js'
+.col-md-10.col-md-offset-1
+  = bootstrap_form_for @item, url: order_bulk_items_path, method: :get, layout: :horizontal,
+     label_col: 'col-md-3', control_col: 'col-md-7' do |f|
+    #orders
+      = f.fields_for :orders, @orders do |order_details|
+        = render 'order_fields', f: order_details
+      .links.pull-right
+        = link_to_add_association '', f, :orders, class: 'glyphicon glyphicon-plus'
+      = f.form_group
+        .pull-right
+          = link_to t('buttons.cancel'), items_path,
+              class: 'btn btn-danger btn-sm'
+          |&nbsp;
+          = f.submit t('buttons.order'), data: { confirm: t('.are_you_sure_you_want_to_place_order')}, class: 'btn btn-success btn-sm'
+    .space-20

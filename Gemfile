@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'public_activity'
 
 gem 'bootstrap_form'
-
+gem 'cocoon'
 gem 'simple-navigation-bootstrap'
 gem 'wicked_pdf', '1.1.0'
 gem 'wkhtmltopdf-binary', '0.12.3.1'

@@ -35,6 +35,7 @@ en:
   buttons:
     save: 'Save'
     cancel: 'Cancel'
+    order: 'Order'
   items:
     index:
       reference_id: &reference_id 'Reference Id'
@@ -89,3 +90,5 @@ en:
       gst_no: 'GST NO 20ACDPA0117'
       full_address: 'Suman Agency Ram Janki Mandir Road Simdega, Mob No: 9835721967'
       address: 'Address:'
+    new:
+      are_you_sure_you_want_to_place_order: 'Are You Sure want to Place Order'

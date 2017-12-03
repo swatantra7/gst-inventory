@@ -1,0 +1,57 @@
+- if is_pdf_request?
+  = wicked_pdf_stylesheet_link_tag 'application'
+  = image_tag wicked_pdf_asset_base64('logo.png')
+- @orders.each do |order|
+  .panel.panel-default
+    .panel-body
+      .row.col-md-3.pull-right
+        p
+          strong = t('.address')
+        p
+          strong = 'Suman Agency Ram Janki Mandir Road Simdega, Mob No: 9835721967'
+      .space-40
+        .col-md-5
+          p
+            strong = "Item Detail of Order"
+        .com-md-7
+          p
+            strong = 'GST NO 20ACDPA0117'
+        .space-20
+          .col-md-9.col-md-offset-1.col-xs-8.col-xs-offset-1
+            .row
+              label.col-md-5.control-label = t('.reference_id')
+              label.col-md-4 = order.item.reference_id
+            .row
+              label.col-md-5.control-label = t('.customer_name')
+              label.col-md-4 = order.customer_name
+            .row
+              label.col-md-5.control-label = t('.item_name')
+              label.col-md-4 = order.item.name
+            .row
+              label.col-md-5.control-label = t('.model_name')
+              label.col-md-4 = order.item.product_model_number
+            .row
+              label.col-md-5.control-label = t('.order_date')
+              label.col-md-4
+                = order.try(:updated_at).try(:to_s, :dd_month_yyyy_at_hh_mm)
+            .row
+              label.col-md-5.control-label = t('.unit_value')
+              label.col-md-4 = order.item.unit_value
+            .row
+              label.col-md-5.control-label = t('quantity')
+              label.col-md-4 = order.quantity
+            .row
+              label.col-md-5.control-label = t('.gst_percentage')
+              label.col-md-4 = order.gst_percentage
+            .row
+              label.col-md-5.control-label Cost:
+              label.col-md-4 = order.amount
+            .row
+              label.col-md-5.control-label = t('.payment_mode')
+              label.col-md-4 = order.payment_mode
+- if !is_pdf_request?
+  .space-20
+    .row
+      = link_to t('.print'), order_detail_orders_path(format: :pdf, current_time: params[:current_time]), class: 'btn btn-success'
+      |&nbsp;
+      = link_to 'Back', orders_path, class: 'btn btn-warning'

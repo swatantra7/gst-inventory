@@ -1,0 +1,27 @@
+.nested-fields
+  .panel.panel-default
+    .panel-body
+      = f.collection_select :item_id, current_user.items, :id, :name, {},
+        { class: 'chosen-select item_id' }
+      = f.text_field :customer_name
+      = f.select :payment_mode, ['CASH PAYMENT', 'CHECK PAYMENT', 'CREDIT' ]
+      = f.text_field :quantity, class: 'quantity'
+      = f.text_field :gst_percentage, class: 'gst-percentage'
+      = f.text_field :amount, disabled: true, class: 'amount'
+      = f.hidden_field :amount, class: 'hide-amount'
+    .links.pull-right
+      = link_to_remove_association '', f, class: 'glyphicon glyphicon-trash'
+javascript:
+  $('.gst-percentage').on('change', function() {
+    var element = this;
+    var quantity = $(element).closest('.form-group').prev().find('.quantity').val()
+    var item_id = $(element).closest('.form-group').prev().prev().prev().prev().find('.item_id').val()
+    $.ajax({
+      url: 'total_amount',
+      data: { quantity: quantity, item_id: item_id, percentage: $(this).val() },
+      success: function(response){
+        $(element).closest('.form-group').next().find('.amount').val(response)
+        $(element).closest('.form-group').next().next().val(response)
+      }
+    });
+  });

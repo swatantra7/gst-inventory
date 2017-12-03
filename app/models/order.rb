@@ -4,6 +4,8 @@ class Order < ApplicationRecord
 
   include PublicActivity::Common
 
+  attr_accessor :_destroy
+
   referenced_with prefix: :ON
 
   belongs_to :item
@@ -14,6 +16,8 @@ class Order < ApplicationRecord
   validate :order_quantity, :order_amount
 
   delegate :name, :product_model_number, :unit_value,:vendor_url, :location, to: :item, allow_nil: true
+
+  scope :placed_orders, ->(placed_time){ where(placed_at_uts: placed_time) }
 
   private
 
@@ -32,13 +36,13 @@ class Order < ApplicationRecord
   end
 
   def order_quantity
-    if quantity > item.quantity || quantity == 0
+    if quantity.blank? || quantity > item.quantity || quantity == 0
       errors.add(:base, :invalid)
     end
   end
 
   def order_amount
-    if amount > item.value || amount == 0
+    if amount.blank? || amount > item.value || amount == 0
       errors.add(:base, :invalid)
     end
   end
