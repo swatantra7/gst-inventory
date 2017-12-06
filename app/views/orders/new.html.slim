@@ -6,7 +6,7 @@
       = f.fields_for :orders, @orders do |order_details|
         = render 'order_fields', f: order_details
       .links.pull-right
-        = link_to_add_association '', f, :orders, class: 'glyphicon glyphicon-plus'
+        = link_to_add_association 'Add', f, :orders, class: 'btn btn-sm btn-success'
       = f.form_group
         .pull-right
           = link_to t('buttons.cancel'), items_path,
