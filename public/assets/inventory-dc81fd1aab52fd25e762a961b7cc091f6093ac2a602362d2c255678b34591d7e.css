@@ -1,0 +1,77 @@
+/* line 9, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.header .top-bar {
+  background-color: #bb8fce;
+}
+/* line 11, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.header .top-bar .header-logo {
+  padding: 5px 0;
+}
+/* line 15, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.header .main-nav {
+  background-color: #f2f3f4;
+  border-bottom: 2px solid #eff3f7;
+}
+/* line 18, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.header .main-nav .nav-item {
+  border-left: 1px solid #eff3f7;
+  font-size: 10px;
+}
+
+/* line 25, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #bb8fce;
+}
+/* line 30, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.footer .copyright, .footer span {
+  color: #ffffff;
+}
+
+/* line 35, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.dashboard-wrapper {
+  padding: 50px;
+}
+/* line 37, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.dashboard-wrapper .dashboard .row {
+  border: 1px solid #dddddd;
+  padding: 4px 0;
+  margin: 0 13px;
+}
+
+/* line 44, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.page-content {
+  padding-top: 62px;
+}
+/* line 46, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.page-content .container {
+  border: 1px solid #d6e3d3;
+  height: auto;
+  padding: 0;
+  margin-bottom: 40px;
+}
+/* line 53, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.page-content .table-wrapper {
+  padding: 50px;
+  background-color: #ffffff;
+}
+/* line 56, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.page-content .table-wrapper th, .page-content .table-wrapper td {
+  text-align: center;
+  color: #657589;
+}
+/* line 60, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.page-content .table-wrapper a i {
+  margin-right: 8px;
+}
+
+/* line 66, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.space-20 {
+  padding: 20px 0;
+}
+
+/* line 69, /home/swatantra/Documents/gst-inventory/app/assets/stylesheets/inventory.scss */
+.space-40 {
+  padding: 40px 0;
+}
